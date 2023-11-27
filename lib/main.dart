@@ -8,10 +8,10 @@ main() {
     print("False");
   }
 
-  List<String> str_list = ["str", "fsad"];
-  str_list.add("NoNo");
+  List<String> strList = ["str", "list", "add", "Nothing"];
+  strList.add("NoNo");
 
-  for (String str in str_list) {
+  for (String str in strList) {
     print(str);
   }
 }
