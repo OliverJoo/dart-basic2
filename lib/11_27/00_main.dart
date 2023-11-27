@@ -10,6 +10,7 @@ main() {
 
   List<String> strList = ["str", "list", "add", "Nothing"];
   strList.add("NoNo");
+  strList.remove("str");
 
   for (String str in strList) {
     print(str);
