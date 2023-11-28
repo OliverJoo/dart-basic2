@@ -1,3 +1,19 @@
+/*
+
+Total Players Number : 4
+Print Rules
+  1) 30 fold numbers : ahh
+  2) 3 fold numbers : clap
+  3) 10 fold number : rool
+  4) others print just number
+Number Range : 1 ~ 100
+
+Results
+  Total counting of clap, rool, ahh
+  clapped number by players
+  Most clapped player
+
+ */
 void main() {
   int number = 99;
   List<String>? players = [];
@@ -52,5 +68,5 @@ void main() {
   }
 
   print('\nclap count: $clapCnt, rool count: $roolCnt, ahh count: $ahhCnt');
-  print('가장 많은 clap을 출력한 플레이어: Player # ${playerClaps.indexOf(numb) + 1}');
+  print('Most clapped player: Player # ${playerClaps.indexOf(numb) + 1}');
 }
