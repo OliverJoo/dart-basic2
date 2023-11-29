@@ -10,7 +10,6 @@ Number Range : 1 ~ 100
 
 Results
   Total counting of clap, rool, ahh
-  clapped number by players
   Most clapped player
 
  */
@@ -41,7 +40,7 @@ void main() {
     players.add(result == '' ? i.toString() : result);
   }
 
-  // print 369 Game
+  // to print 369 Game
   for (int i = 0; i < players.length; i++) {
     print('Palyer ${i % 4 + 1} : ${players[i]}');
     // counting
