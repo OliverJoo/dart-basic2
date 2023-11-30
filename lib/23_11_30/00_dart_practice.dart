@@ -17,24 +17,21 @@ class Cleric {
     hp = maxHp;
   }
 
-  int pray(int sec){
+  int pray(int sec) {
     mp += sec + Random().nextInt(3);
     return mp;
   }
 
-  void printStatus(){
+  void printStatus() {
     print('Cleric Name : $name, HP : $hp, MP : $mp ');
   }
 }
 
-void main(){
+void main() {
   final cleric = new Cleric('test', 30, 10);
   cleric.printStatus();
   print(cleric.pray(4));
-
   cleric.printStatus();
   cleric.selfAid();
   cleric.printStatus();
-
-
 }
