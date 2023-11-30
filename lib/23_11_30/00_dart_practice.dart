@@ -19,13 +19,16 @@ class Cleric {
   }
 
   int pray(int sec) {
-    mp += sec + Random().nextInt(3);
+    int recoverMp = sec + Random().nextInt(3);
 
-    if (mp > maxMp) {
+    if (mp + recoverMp > maxMp) {
       mp = maxMp;
+      recoverMp = 0;
+    } else{
+      mp += recoverMp;
     }
 
-    return mp;
+    return recoverMp;
   }
 
   void printStatus() {
@@ -36,7 +39,7 @@ class Cleric {
 void main() {
   final cleric = new Cleric('test', 30, 10);
   cleric.printStatus();
-  print('After pray current MP : ${cleric.pray(4)}');
+  print('Recovered MP : ${cleric.pray(4)}');
   cleric.printStatus();
   cleric.selfAid();
   cleric.printStatus();
@@ -44,17 +47,22 @@ void main() {
   cleric.printStatus();
   cleric.selfAid();
   cleric.printStatus();
-  print('After pray current MP : ${cleric.pray(5)}');
+  print('Recovered MP : ${cleric.pray(5)}');
   cleric.printStatus();
   cleric.selfAid();
   cleric.printStatus();
   cleric.selfAid();
   cleric.printStatus();
   cleric.selfAid();
-  print('After pray current MP : ${cleric.pray(3)}');
+  print('Recovered MP : ${cleric.pray(3)}');
   cleric.printStatus();
-  print('After pray current MP : ${cleric.pray(3)}');
+  print('Recovered MP : ${cleric.pray(3)}');
   cleric.selfAid();
   cleric.printStatus();
   cleric.selfAid();
+  print('Recovered MP : ${cleric.pray(3)}');
+  cleric.printStatus();
+  cleric.selfAid();
+  cleric.printStatus();
+
 }
