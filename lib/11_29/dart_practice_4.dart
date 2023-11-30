@@ -20,4 +20,5 @@ class Bird extends Animal with Flyable {
 void main() {
   var bird = Bird('Bird'); // "Bird"라는 이름을 가진 Bird 객체 생성
   bird.fly();
+
 }

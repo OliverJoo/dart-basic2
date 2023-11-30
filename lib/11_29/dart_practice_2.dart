@@ -10,15 +10,9 @@ class IronMan {
 }
 
 class IronManMK3 extends IronMan {
-//MK3는 리펄서를 쏘고 하늘을 날수 있게 해보세요
-//shoot() 메서드를 오버라이드 합니다.
-//비행고도 값을 추가한뒤
-//fly() 메서드를 추가하세요
-
   int? flyheight;
 
-  IronManMK3(String name, int powerLevel, this.flyheight)
-      : super(name, powerLevel);
+  IronManMK3(String name, int powerLevel, this.flyheight): super(name, powerLevel);
 
   @override
   void shoot() {

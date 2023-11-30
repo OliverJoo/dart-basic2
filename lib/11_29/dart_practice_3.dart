@@ -1,18 +1,13 @@
 //추상클래스를 사용하여 IronMan Class에 method를 구현하기
-
 abstract class IronMan {
-  var name;
+  String name="test";
   var suitColor;
 
   IronMan(this.name, this.suitColor);
 
-  // This is an abstract method. It must be implemented by subclasses.
+  // Below are abstract methods. It must be implemented by subclasses.
   void fly();
-
-  // This is an abstract method. It must be implemented by subclasses.
   void shootLasers();
-
-  // This is an abstract method. It must be implemented by subclasses.
   void withstandDamage();
 }
 
