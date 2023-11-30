@@ -19,16 +19,16 @@ class Cleric {
   }
 
   int pray(int sec) {
-    int recoverMp = sec + Random().nextInt(3);
+    int recoveredMp = sec + Random().nextInt(3);
 
-    if (mp + recoverMp > maxMp) {
+    if (mp + recoveredMp > maxMp) {
       mp = maxMp;
-      recoverMp = 0;
-    } else{
-      mp += recoverMp;
+      recoveredMp = 0;
+    } else {
+      mp += recoveredMp;
     }
 
-    return recoverMp;
+    return recoveredMp;
   }
 
   void printStatus() {
@@ -64,5 +64,4 @@ void main() {
   cleric.printStatus();
   cleric.selfAid();
   cleric.printStatus();
-
 }
