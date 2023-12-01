@@ -8,7 +8,7 @@ class Cleric {
   int? hp;
   int? mp;
 
-  Cleric(this.name, {this.hp = maxHp,  this.mp = maxMp});
+  Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
 
   void selfAid() {
     if (mp! >= 5) {
