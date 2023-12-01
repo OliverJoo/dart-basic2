@@ -37,7 +37,7 @@ class Cleric {
 }
 
 void main() {
-  final cleric = new Cleric('test', 30, 10);
+  final cleric = Cleric('test', 30, 10);
   cleric.printStatus();
   print('Recovered MP : ${cleric.pray(4)}');
   cleric.printStatus();
