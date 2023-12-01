@@ -5,14 +5,14 @@ class Cleric {
   static const int maxMp = 10;
 
   String name;
-  int? hp;
-  int? mp;
+  int hp;
+  int mp;
 
   Cleric(this.name, {this.hp = maxHp, this.mp = maxMp});
 
   void selfAid() {
-    if (mp! >= 5) {
-      mp = mp! - 5;
+    if (mp >= 5) {
+      mp -= 5;
       hp = maxHp;
     } else {
       print('Not enough MP! do pray~');
@@ -27,11 +27,11 @@ class Cleric {
 
     int recoveredMp = sec + Random().nextInt(3);
 
-    if (mp! + recoveredMp > maxHp) {
+    if (mp + recoveredMp > maxHp) {
       mp = maxHp;
       recoveredMp = 0;
     } else {
-      mp = mp! + recoveredMp;
+      mp += recoveredMp;
     }
 
     return recoveredMp;
