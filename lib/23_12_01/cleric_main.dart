@@ -7,29 +7,33 @@ void main() {
   // final cleric3 = Cleric(); // D
 
   cleric.printStatus();
-  print('Recovered MP : ${cleric.pray(4)}');
-  cleric.printStatus();
-  cleric.selfAid();
-  cleric.printStatus();
-  cleric.selfAid();
-  cleric.printStatus();
-  cleric.selfAid();
-  cleric.printStatus();
-  print('Recovered MP : ${cleric.pray(5)}');
-  cleric.printStatus();
-  cleric.selfAid();
-  cleric.printStatus();
-  cleric.selfAid();
-  cleric.printStatus();
-  cleric.selfAid();
-  print('Recovered MP : ${cleric.pray(3)}');
-  cleric.printStatus();
-  print('Recovered MP : ${cleric.pray(3)}');
-  cleric.selfAid();
-  cleric.printStatus();
-  cleric.selfAid();
-  print('Recovered MP : ${cleric.pray(3)}');
-  cleric.printStatus();
-  cleric.selfAid();
-  cleric.printStatus();
+  cleric1.printStatus();
+  cleric2.printStatus();
+
+  // cleric.printStatus();
+  // print('Recovered MP : ${cleric.pray(4)}');
+  // cleric.printStatus();
+  // cleric.selfAid();
+  // cleric.printStatus();
+  // cleric.selfAid();
+  // cleric.printStatus();
+  // cleric.selfAid();
+  // cleric.printStatus();
+  // print('Recovered MP : ${cleric.pray(5)}');
+  // cleric.printStatus();
+  // cleric.selfAid();
+  // cleric.printStatus();
+  // cleric.selfAid();
+  // cleric.printStatus();
+  // cleric.selfAid();
+  // print('Recovered MP : ${cleric.pray(3)}');
+  // cleric.printStatus();
+  // print('Recovered MP : ${cleric.pray(3)}');
+  // cleric.selfAid();
+  // cleric.printStatus();
+  // cleric.selfAid();
+  // print('Recovered MP : ${cleric.pray(3)}');
+  // cleric.printStatus();
+  // cleric.selfAid();
+  // cleric.printStatus();
 }
