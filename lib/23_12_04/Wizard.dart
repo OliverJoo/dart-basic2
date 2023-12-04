@@ -1,3 +1,8 @@
+final String nameValidation = '이름은 필수이고, 이름의 최소 길이는 3글자 이상입니다!';
+final String wandValidation = '지팡이는 필수입니다';
+final String wandPowerValidation = '지팡이의 마력은 0.5 이상 100.0 이하로 입력해주세요';
+final String wizardMpValidation = '마법사의 MP는 0 이상이어야 합니다.';
+
 class Wizard {
   String _name;
   int _hp;
@@ -10,15 +15,17 @@ class Wizard {
     required int mp,
     required Wand? wand,
   })  : _name = name!,
-        _hp = (hp < 0) ? 0 : hp, // hp 가 0 이하면 0으로 설정
+        _hp = (hp < 0) ? 0 : hp,
+        // hp 가 0 이하면 0으로 설정
         _mp = mp,
         _wand = wand!,
-        assert(name != null && mp >= 0 &&
-            wand != null); // mp는 0 이상이어야 하고 지팡이는 not null
+        assert(name != null && name.length >= 3, nameValidation),
+        assert(mp >= 0, wizardMpValidation),
+        assert(wand != null, wandValidation);
 
   void set name(String? name) {
-    if (name == null) {
-      throw Exception('마법사 이름 필수!');
+    if (name == null || name.length < 3) {
+      throw Exception(nameValidation);
     }
     _name = name;
   }
@@ -26,7 +33,7 @@ class Wizard {
   // 3. 마법사의 지팡이는 null 일 수 없다
   void set wand(Wand? wand) {
     if (wand == null) {
-      throw Exception('마법사는 지팡이 필수!');
+      throw Exception(wandValidation);
     }
     _wand = wand;
   }
@@ -34,7 +41,7 @@ class Wizard {
   // 4. 마법사의 MP는 0 이상이어야 한다.
   void set mp(int value) {
     if (value < 0) {
-      throw Exception('마법사의 MP는 0 이상이어야 합니다');
+      throw Exception(wizardMpValidation);
     } else {
       _mp = value;
     }
@@ -59,18 +66,16 @@ class Wand {
   String _name;
   double _power;
 
-  Wand({required String? name, required double power})
-      : _name = name!,
+  Wand({required String name, required double power})
+      : _name = name,
         _power = power,
-        assert(name != null && // 이름은 null 일수 없으며
-            name.length >= 3 && // 이름의 최소 길이는 3
-            power >= 0.5 &&
-            power <= 100.0); // 마력은 0.5 이상 100.0 이하
+        assert(name != null && name.length >= 3, nameValidation),
+        assert(power >= 0.5 && power <= 100.0, wandPowerValidation);
 
   // 1. 마법사나 지팡이의 이름은 null 일 수 없고, 반드시 3문자 이상
   void set name(String? name) {
     if (name == null || name.length < 3) {
-      throw Exception('이름은 null일 수 없고, 최소한 3글자 이상이어야 합니다.');
+      throw Exception(nameValidation);
     }
     _name = name;
   }
@@ -80,7 +85,7 @@ class Wand {
     if (value >= 0.5 && value <= 100.0) {
       _power = value;
     } else {
-      throw Exception('지팡이의 마력은 0.5 이상 100.0 이하만 가능합니다.');
+      throw Exception(wandPowerValidation);
     }
   }
 
@@ -91,11 +96,12 @@ class Wand {
 }
 
 void main() {
-  final wand = Wand(name: '완드1', power: 100);
+  final wand = Wand(name: "완21", power: 100);
   wand.power = 0.5;
-  wand.name = '완드2';
+  wand.name = '완드1';
+  // print(wand.toString());
 
-  final wizard = Wizard(name: '널어', hp: -11, mp: 2, wand: wand);
+  final wizard = Wizard(name: "마법사", hp: -11, mp: 2, wand: wand);
   // wizard.hp = 20;
   // wizard.mp = -1;
   // wizard.wand = null;
