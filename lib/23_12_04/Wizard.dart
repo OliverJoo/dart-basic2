@@ -1,18 +1,27 @@
 class Wizard {
-  String name;
+  String _name;
   int _hp;
   int _mp;
   Wand _wand;
 
   Wizard({
-    required this.name,
+    required String? name,
     required int hp,
     required int mp,
     required Wand? wand,
-  })  : _hp = (hp < 0) ? 0 : 0, // hp 가 0 이하면 0으로 설정
+  })  : _name = name!,
+        _hp = (hp < 0) ? 0 : hp, // hp 가 0 이하면 0으로 설정
         _mp = mp,
         _wand = wand!,
-        assert(mp >= 0 && wand != null); // mp는 0 이상이어야 하고 지팡이는 not null
+        assert(name != null && mp >= 0 &&
+            wand != null); // mp는 0 이상이어야 하고 지팡이는 not null
+
+  void set name(String? name) {
+    if (name == null) {
+      throw Exception('마법사 이름 필수!');
+    }
+    _name = name;
+  }
 
   // 3. 마법사의 지팡이는 null 일 수 없다
   void set wand(Wand? wand) {
@@ -42,7 +51,7 @@ class Wizard {
 
   @override
   String toString() {
-    return 'Wizard{name: $name, _hp: $_hp, _mp: $_mp, _wand: $_wand}';
+    return 'Wizard{name: $_name, _hp: $_hp, _mp: $_mp, _wand: $_wand}';
   }
 }
 
@@ -86,9 +95,10 @@ void main() {
   wand.power = 0.5;
   wand.name = '완드2';
 
-  final wizard = Wizard(name: '위자드1', hp: -11, mp: 2, wand: wand);
-  wizard.hp = -2;
+  final wizard = Wizard(name: '널어', hp: -11, mp: 2, wand: wand);
+  // wizard.hp = 20;
   // wizard.mp = -1;
   // wizard.wand = null;
+
   print(wizard.toString());
 }
