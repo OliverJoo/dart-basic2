@@ -23,6 +23,11 @@ void main() {
     print(personInstance.name); // 연습문제 2-2
   }
 
+  // Destructuring pattern
+  // for(final Person(:name) in personList){
+  //   print(name);
+  // }
+
   final Map<String, dynamic> personInfo = {};
   personInfo[person1.name] = 20;
   personInfo[person2.name] = 25;
