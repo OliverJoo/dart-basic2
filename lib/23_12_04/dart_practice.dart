@@ -23,4 +23,12 @@ void main() {
     print(personInstance.name); // 연습문제 2-2
   }
 
+  final Map<String, dynamic> personInfo = {};
+  personInfo[person1.name] = 20;
+  personInfo[person2.name] = 25;
+
+  print('\nMap에 저장한 값 출력하기~');
+  personInfo.forEach((key, value) {
+    print('$key의 나이는 $value살'); // 연습문제 2-3
+  });
 }
