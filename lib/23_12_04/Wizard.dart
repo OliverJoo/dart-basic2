@@ -15,8 +15,7 @@ class Wizard {
     required int mp,
     required Wand wand,
   })  : _name = name,
-        _hp = (hp < 0) ? 0 : hp,
-        // hp 가 0 이하면 0으로 설정
+        _hp = (hp < 0) ? 0 : hp, // hp 가 0 이하면 0으로 설정
         _mp = mp,
         _wand = wand,
         assert(name.length >= 3, nameValidation),
