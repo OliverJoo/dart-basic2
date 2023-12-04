@@ -10,20 +10,20 @@ class Wizard {
   Wand _wand;
 
   Wizard({
-    required String? name,
+    required String name,
     required int hp,
     required int mp,
-    required Wand? wand,
-  })  : _name = name!,
+    required Wand wand,
+  })  : _name = name,
         _hp = (hp < 0) ? 0 : hp,
         // hp 가 0 이하면 0으로 설정
         _mp = mp,
-        _wand = wand!,
-        assert(name != null && name.length >= 3, nameValidation),
-        assert(mp >= 0, wizardMpValidation),
-        assert(wand != null, wandValidation);
+        _wand = wand,
+        assert(name.length >= 3, nameValidation),
+        assert(mp >= 0, wizardMpValidation);
+        // assert(wand != null, wandValidation);
 
-  void set name(String? name) {
+  set name(String? name) {
     if (name == null || name.length < 3) {
       throw Exception(nameValidation);
     }
@@ -31,7 +31,7 @@ class Wizard {
   }
 
   // 3. 마법사의 지팡이는 null 일 수 없다
-  void set wand(Wand? wand) {
+  set wand(Wand? wand) {
     if (wand == null) {
       throw Exception(wandValidation);
     }
@@ -39,7 +39,7 @@ class Wizard {
   }
 
   // 4. 마법사의 MP는 0 이상이어야 한다.
-  void set mp(int value) {
+  set mp(int value) {
     if (value < 0) {
       throw Exception(wizardMpValidation);
     } else {
@@ -48,7 +48,7 @@ class Wizard {
   }
 
   // 5. HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다. (에러 아님)
-  void set hp(int value) {
+  set hp(int value) {
     if (value < 0) {
       _hp = 0;
     } else {
@@ -69,11 +69,11 @@ class Wand {
   Wand({required String name, required double power})
       : _name = name,
         _power = power,
-        assert(name != null && name.length >= 3, nameValidation),
+        assert(name.length >= 3, nameValidation),
         assert(power >= 0.5 && power <= 100.0, wandPowerValidation);
 
   // 1. 마법사나 지팡이의 이름은 null 일 수 없고, 반드시 3문자 이상
-  void set name(String? name) {
+  set name(String? name) {
     if (name == null || name.length < 3) {
       throw Exception(nameValidation);
     }
@@ -81,7 +81,7 @@ class Wand {
   }
 
   // 2. 지팡이의 마력은 0.5 이상 100.0 이하여야 한다.
-  void set power(double value) {
+  set power(double value) {
     if (value >= 0.5 && value <= 100.0) {
       _power = value;
     } else {
