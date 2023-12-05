@@ -96,8 +96,8 @@ class Wand {
 
 void main() {
   final wand = Wand(name: "완21", power: 100);
-  wand.power = 0.5;
-  wand.name = '완드1';
+  // wand.power = 0.5;
+  // wand.name = '완드1';
   // print(wand.toString());
 
   final wizard = Wizard(name: "마법사", hp: -11, mp: 2, wand: wand);
