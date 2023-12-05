@@ -13,11 +13,11 @@ class Person {
 void main() {
   final person = Person(age: 25);
 
-  // if (person.name != null) {
-  //   print("안녕하세요, ${person.name}님!");
-  // } else {
-  //   print("이름이 없어요~");
-  // }
+  if (person.name != null) {
+    print("안녕하세요, ${person.name}님!");
+  } else {
+    print("이름이 없어요~");
+  }
 
   // if (person.name != null) {
   //   print("안녕하세요, ${person!.name}님!");
