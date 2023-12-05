@@ -37,12 +37,7 @@ class Patent extends IntangibleAsset {
 
 abstract class TangibleAsset extends Asset implements Thing {
   double _weight;
-
-  TangibleAsset({
-    required super.name,
-    required double weight,
-    required super.price,
-  }) : _weight = weight;
+  String color;
 
   @override
   double get weight => _weight;
@@ -51,27 +46,32 @@ abstract class TangibleAsset extends Asset implements Thing {
   set weight(double weight) {
     _weight = weight;
   }
+
+  TangibleAsset({
+    required this.color,
+    required double weight,
+    required super.name,
+    required super.price,
+  }) : _weight = weight;
 }
 
 class Book extends TangibleAsset {
-  String color;
   String isbn;
 
   Book({
-    required this.color,
     required this.isbn,
     required super.name,
     required super.price,
     required super.weight,
+    required super.color,
   });
 }
 
 class Computer extends TangibleAsset {
-  String color;
   String makerName;
 
   Computer({
-    required this.color,
+    required super.color,
     required this.makerName,
     required super.name,
     required super.price,
