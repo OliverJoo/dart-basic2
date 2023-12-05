@@ -74,7 +74,7 @@ class PoisonSlime extends Slime {
         if (hero.hp <= damage) {
           damage = hero.hp;
           hero.hp = 0;
-          print('${hero.name}이 사망했다!');
+          print('${hero.name}이 사망하였습니다!');
           return;
         } else {
           hero.hp -= damage;
