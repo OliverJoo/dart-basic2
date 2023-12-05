@@ -18,7 +18,7 @@ abstract interface class Thing {
 
 // 나
 abstract class IntangibleAsset extends Asset {
-  String right; // 무형자산의 권리명
+  String right; // 무형자산의 특허명
 
   IntangibleAsset(
       {required this.right, required super.name, required super.price});
