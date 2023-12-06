@@ -68,7 +68,7 @@ class PoisonSlime extends Slime {
 
       // 독 공격 횟수가 남아있는가?
       if (posisonAttackCnt > 0) {
-        int damage = (hero.hp.toDouble() * 0.25).toInt();
+        int damage = (hero.hp.toDouble() * 0.25).toInt(); // = hero.hp ~/5;
 
         // 영웅이 현재 자신의 hp보다 큰 데미지를 받았다면 현재hp만큼 데미지를 입는다.
         if (hero.hp <= damage) {
