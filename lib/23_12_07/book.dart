@@ -63,21 +63,15 @@ void main() {
   print((book1 == book4) ? sameBookMsg : differentBookMsg); // 책 이름과 출간일이 다름
 
   final List<Book> bookList = [];
-  bookList.add(book1);
-  bookList.add(book2);
-  bookList.add(book3);
-  bookList.add(book4);
+  bookList.addAll([book1, book2, book3, book4]);
 
   print('List 정렬 전 : $bookList');
   bookList.sort();
   print('List 정렬 후 : $bookList');
 
   // 1.Set 에 넣으면 동일 객체로 판단
-  final Set<Book> bookSet = {};
-  bookSet.add(book1);
-  bookSet.add(book2);
-  bookSet.add(book3);
-  bookSet.add(book4);
+  final Set<Book> bookSet = {book1, book2, book3, book4};
+
   print('Set에 담긴 객체 수 : ${bookSet.length}');
   print('List에 담긴 객체 수 :${bookList.length}');
 }
