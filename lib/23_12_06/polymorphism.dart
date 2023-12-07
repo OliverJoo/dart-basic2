@@ -52,7 +52,6 @@ void main() {
   A a1 = A();
   B b1 = B();
 
-
   List<Y> classList = [];
   classList.add(y1);
   classList.add(y2);
