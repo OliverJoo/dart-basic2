@@ -20,8 +20,10 @@ class StrongBox<E extends KeyType> {
 
   KeyType? get() {
     keyUsingCnt ++;
+    // enum 타입의 키 종류에 따른 분류
     switch (_keyKind) {
       case KeyType.padlock:
+        // enum 키 종류의 시도 제한 횟수 미달시 null, 초과시 키종류 리턴
         return (keyUsingCnt > KeyType.padlock.maxCnt) ? _keyKind : null;
       case KeyType.button:
         return (keyUsingCnt > KeyType.button.maxCnt) ? _keyKind : null;
@@ -34,6 +36,8 @@ class StrongBox<E extends KeyType> {
 }
 
 void main() {
+
+  // enum 타입을 순환하며 unlock 시도!
   for (KeyType value in KeyType.values) {
     var strongBox = StrongBox<KeyType>(keyKind: value);
 
@@ -44,9 +48,5 @@ void main() {
         break;
       }
     }
-  }
-
-  for (KeyType value in KeyType.values) {
-    print(value);
   }
 }
