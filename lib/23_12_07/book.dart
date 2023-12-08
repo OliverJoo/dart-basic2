@@ -26,7 +26,7 @@ class Book implements Comparable<Book> {
               DateFormat('yyyy-MM-dd').format(other.publishDate);
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode => title.hashCode ^ DateFormat('yyyy-MM-dd').format(publishDate).hashCode;
 
   // 3. deep copy 지원
   Book copyWith({
