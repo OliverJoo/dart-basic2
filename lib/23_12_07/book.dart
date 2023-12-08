@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 final String sameBookMsg = '같은 책 입니다.';
 final String differentBookMsg = '다른 책 입니다.';
 
@@ -18,7 +20,8 @@ class Book implements Comparable<Book> {
       other is Book &&
           runtimeType == other.runtimeType &&
           title == other.title &&
-          publishDate == other.publishDate;
+          DateFormat('yyyy-MM-dd').format(publishDate) ==
+              DateFormat('yyyy-MM-dd').format(other.publishDate);
 
   @override
   int get hashCode => title.hashCode ^ publishDate.hashCode;
@@ -50,17 +53,19 @@ class Book implements Comparable<Book> {
 
 void main() {
   final DateTime datetimeNow = DateTime.now();
+
   final book1 = Book(title: '책1', comment: '굳!', publishDate: datetimeNow);
   final book2 = book1.copyWith(comment: '나이스!');
   final DateTime datetimeNow2 = DateTime(2023, 12, 7, 16, 00, 20);
   final book3 = book1.copyWith(comment: '나이스!', publishDate: datetimeNow2);
   final DateTime datetimeNow3 = DateTime(2023, 12, 7, 16, 50, 20);
-  final book4 = Book(title: '책4', comment: '베스트셀러!', publishDate: datetimeNow3);
+  final book4 = Book(title: '책1',comment: '베스트셀러!', publishDate: datetimeNow3);
 
   // 1. 제목과 출간일이 같으면 같은 책으로 판단
   print((book1 == book2) ? sameBookMsg : differentBookMsg); // 이름과 출간일이 같음
   print((book1 == book3) ? sameBookMsg : differentBookMsg); // 출간일이 다름
   print((book1 == book4) ? sameBookMsg : differentBookMsg); // 책 이름과 출간일이 다름
+  print((book3 == book4) ? sameBookMsg : differentBookMsg); // 책 이름과 출간일이 같음
 
   final List<Book> bookList = [];
   bookList.addAll([book1, book2, book3, book4]);
