@@ -64,7 +64,7 @@ void main() {
   final department = Department(name: '총무부', leader: employee);
 
   print(department.toString());
-  File('department.txt').writeAsStringSync(jsonEncode(department.toJson()));
+  File('company.txt').writeAsStringSync(jsonEncode(department.toJson()));
 
   final employee1 = Employee(name: '김두한', age: 40);
   final department1 = Department(name: '개발팀', leader: employee1);
