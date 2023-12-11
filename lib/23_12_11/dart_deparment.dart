@@ -12,8 +12,8 @@ class Employee {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': this.name,
-      'age': this.age,
+      'name': name,
+      'age': age,
     };
   }
 
@@ -41,8 +41,8 @@ class Department {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': this.name,
-      'leader': this.leader,
+      'name': name,
+      'leader': leader,
     };
   }
 
