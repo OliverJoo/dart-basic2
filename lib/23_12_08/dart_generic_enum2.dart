@@ -1,5 +1,3 @@
-int keyUsingCnt = 0;
-
 enum KeyType {
   padlock(maxCnt: 1024),
   button(maxCnt: 10000),
@@ -13,13 +11,14 @@ enum KeyType {
 
 class StrongBox<E extends KeyType> {
   KeyType _keyKind;
+  int keyUsingCnt = 0;
 
   StrongBox({required KeyType keyKind}) : _keyKind = keyKind;
 
   void put(KeyType keyKind) => _keyKind = keyKind;
 
   KeyType? get() {
-    keyUsingCnt ++;
+    keyUsingCnt++;
     // enum 타입의 키 종류에 따른 분류
     switch (_keyKind) {
       case KeyType.padlock:
@@ -36,15 +35,14 @@ class StrongBox<E extends KeyType> {
 }
 
 void main() {
-
   // enum 타입을 순환하며 unlock 시도!
   for (KeyType value in KeyType.values) {
     var strongBox = StrongBox<KeyType>(keyKind: value);
 
     for (int i = 0; i < 100004; i++) {
       if (strongBox.get() != null) {
-        print('Unlocked by ${strongBox.get()}! ${keyUsingCnt - 1}th trying');
-        keyUsingCnt = 0;
+        print('Unlocked by ${strongBox.get()}! ${strongBox.keyUsingCnt - 1}th trying');
+        strongBox.keyUsingCnt = 0; // 한번에 테스트 하기 위해 public
         break;
       }
     }
