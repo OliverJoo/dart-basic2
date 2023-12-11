@@ -7,6 +7,7 @@ void main() {
     num = int.parse(numString);
   } catch (e) {
     num = 0;
+    // throw Exception(e.toString());
   }
 
   print(num);
