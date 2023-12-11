@@ -79,4 +79,6 @@ void main() {
     File('dept_list.txt').writeAsStringSync(jsonEncode(department.toJson()),
         mode: FileMode.append);
   }
+
+  // print(jsonDecode(File('department.txt').readAsStringSync()));
 }
