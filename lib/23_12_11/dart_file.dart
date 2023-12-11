@@ -10,7 +10,7 @@ void copy(String source, String target) {
 
 void main() {
   final file = File('source.txt');
-  // file.writeAsStringSync('Source file is here!');
+  // file.writeAsStringSync('source file is here!');
 
   print(file.readAsStringSync());
   copy('source.txt', 'target.txt');
