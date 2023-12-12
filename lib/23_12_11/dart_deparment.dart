@@ -42,7 +42,7 @@ class Department {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
-      'leader': leader,
+      'leader': leader, //.toJson(),
     };
   }
 
@@ -62,6 +62,9 @@ class Department {
 void main() {
   final employee = Employee(name: '홍길동', age: 41);
   final department = Department(name: '총무부', leader: employee);
+
+  // department.leader = employee;
+  // print(jsonEncode(department.toJson()));
 
   print(department.toString());
   File('company.txt').writeAsStringSync(jsonEncode(department.toJson()));

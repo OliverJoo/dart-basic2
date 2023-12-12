@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 void copy(String source, String target) {
@@ -7,6 +6,8 @@ void copy(String source, String target) {
 
   targetFile.writeAsStringSync(sourceFile.readAsStringSync());
 }
+
+void copy2(String source, String target) => File(source).copySync(target);
 
 void main() {
   final file = File('source.txt');
