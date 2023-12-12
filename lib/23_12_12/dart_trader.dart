@@ -25,6 +25,7 @@ class Transaction {
   }
 }
 
+
 final transactions = [
   Transaction(Trader("Brian", "Cambridge"), 2011, 300),
   Transaction(Trader("Raoul", "Cambridge"), 2012, 1000),
