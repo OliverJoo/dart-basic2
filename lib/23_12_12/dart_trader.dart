@@ -54,11 +54,12 @@ void main() {
   print(transactions.where((e) => e.trader.city == 'Milan').isNotEmpty);
 
   // 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션값을 출력하시오
-  print(transactions.where((e) => e.trader.city == 'Milan').toList().map((e) => e.value));
+  print(transactions.where((e) => e.trader.city == 'Cambridge').toList().map((e) => e.value));
 
   // 7. 전체 트랜잭션 중 최대값은 얼마인가?
   print(transactions.map((e) => e.value).reduce((v, e) => max(e, v)));
 
   // 8. 전체 트랜잭션 중 최소값은 얼마인가?
   print(transactions.map((e) => e.value).reduce((v, e) => min(e, v)));
+
 }
