@@ -31,6 +31,8 @@ class MovieInfo {
 void main() async {
   final String movieInfo = await getMovieInfo();
   print(MovieInfo.fromMap(jsonDecode(movieInfo)).director);
+
+  print(jsonDecode(await getMovieInfo())['director']);
 }
 
 Future<String> getMovieInfo() async {
