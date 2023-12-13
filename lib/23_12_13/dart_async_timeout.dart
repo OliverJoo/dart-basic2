@@ -5,7 +5,7 @@ Future<String> timeoutFuture() async {
   return 'ok';
 }
 
-Future<void> main() async {
+void main() async {
   try {
     final String result = await timeoutFuture().timeout(const Duration(seconds: 5));
   } on TimeoutException catch (e) {
