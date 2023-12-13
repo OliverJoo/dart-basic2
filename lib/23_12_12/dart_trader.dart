@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:collection/collection.dart';
+
 class Trader {
   String name;
   String city;
@@ -58,7 +60,9 @@ void main() {
   print(transactions.where((e) => e.trader.city == 'Cambridge').toList().map((e) => e.value));
 
   // 7. 전체 트랜잭션 중 최대값은 얼마인가?
-  print(transactions.map((e) => e.value).reduce((v, e) => max(e, v)));
+  // print(transactions.map((e) => e.value).reduce((v, e) => max(e, v)));
+  print(transactions.map((e) => e.value).reduce(max));
+  print(transactions.map((e) => e.value).max);
 
   // 8. 전체 트랜잭션 중 최소값은 얼마인가?
   print(transactions.map((e) => e.value).reduce((v, e) => min(e, v)));
