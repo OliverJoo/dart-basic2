@@ -69,6 +69,7 @@ proguard/
 # Log & Text Files
 *.log
 *.txt
+*.csv
 
 # Android Studio
 /*/build/
