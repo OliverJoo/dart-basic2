@@ -93,27 +93,18 @@ class Stores {
 }
 
 void main() async {
-  try {
-    final mask = MaskStores.fromJson(await getMaskStoresInfo());
-    final maskList = <Stores>[];
-    mask.stores?.forEach((e) {
-      if (e.code != null &&
-          e.createdAt != null &&
-          e.addr != null &&
-          e.type != null &&
-          e.stockAt != null &&
-          e.remainStat != null &&
-          e.lng != null &&
-          e.lat != null &&
-          e.name != null) {
-        maskList.add(e);
+  final mask = MaskStores.fromJson(await getMaskStoresInfo());
+  final storeList = [];
+
+  mask.stores?.forEach((e) {
+    for (var key in e.toJson().keys) {
+      if (e.toJson()[key] != null) {
+        storeList.add('$key : ${e.toJson()[key]}');
       }
-    });
-    print(maskList.toString());
-    print(maskList.length);
-  } catch (e) {
-    print(e.toString());
-  }
+    }
+    storeList.add('\n');
+  });
+  print(storeList.toString());
 }
 
 Future<Map<String, dynamic>> getMaskStoresInfo() async {
