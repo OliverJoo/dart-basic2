@@ -1,8 +1,11 @@
 import "dart:convert";
 import "package:http/http.dart" as http;
 
+import "MoiveInfo.dart";
+
 void main() async {
-  print(jsonEncode(await getMovieInfo()));
+  final moveiInfo = MoiveInfo.fromJson(await getMovieInfo());
+  print(moveiInfo.toJson());
 }
 
 Future<Map<String, dynamic>> getMovieInfo() async {
