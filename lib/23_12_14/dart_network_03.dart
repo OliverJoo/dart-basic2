@@ -7,7 +7,19 @@ final String iconFileName = 'icon.ico';
 final String imageUrl = 'https://alimipro.com/favicon.ico';
 
 void main() async {
+  final stopwatch = Stopwatch();
+
+  print('다운로드 시작');
+  stopwatch.start();
   saveFile(await downloadImage(imageUrl), iconFileName);
+  stopwatch.stop();
+
+  print('다운로드 끝');
+  print('===========');
+  print('소요시간 : ${stopwatch.elapsed}');
+
+  final byte = (await File(iconFileName).readAsBytes()).length;
+  print('용량 $byte bytes');
 }
 
 Future<File> saveFile(Uint8List bytes, String fileName) async {
@@ -16,7 +28,6 @@ Future<File> saveFile(Uint8List bytes, String fileName) async {
 
 Future<Uint8List> downloadImage(String url) async {
   final response = await http.get(Uri.parse(url));
-
   if (response.statusCode == 200) {
     return response.bodyBytes;
   } else {
