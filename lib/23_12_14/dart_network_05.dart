@@ -13,20 +13,20 @@ final String imageFileName3 = 'Pencil_drawing_of_a_girl_in_ecstasy.jpg';
 void main() async {
   final stopwatch = Stopwatch();
 
-  print('다운로드 시작');
+  print('순차처리 다운로드 시작');
 
   stopwatch.start();
   downloadImageFiles().then((value) => stopwatch.stop());
-  print('다운로드 끝');
-  print('===========');
+  print('순차처리 다운로드 끝');
   print('순차처리 소요시간 : ${stopwatch.elapsed}');
+  print('===========');
   stopwatch.reset();
 
   stopwatch.start();
+  print('병렬처리 다운로드 시작');
   downloadImageFilesParallel().then((value) => stopwatch.stop());
 
-  print('다운로드 끝');
-  print('===========');
+  print('병렬처리 다운로드 끝');
   print('병렬처리 소요시간 : ${stopwatch.elapsed}');
 }
 
