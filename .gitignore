@@ -71,6 +71,8 @@ proguard/
 *.txt
 *.csv
 *.ico
+*.jpg
+*.png
 
 # Android Studio
 /*/build/
