@@ -53,6 +53,6 @@ Future<File> downloadImage(String url, String fileName) async {
   if (response.statusCode == 200) {
     return File(fileName).writeAsBytes(response.bodyBytes);
   } else {
-    throw Exception('Failed to load Movie Information');
+    throw Exception('Failed to load File Information');
   }
 }

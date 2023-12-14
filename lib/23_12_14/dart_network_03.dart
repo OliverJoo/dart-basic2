@@ -31,6 +31,6 @@ Future<Uint8List> downloadImage(String url) async {
   if (response.statusCode == 200) {
     return response.bodyBytes;
   } else {
-    throw Exception('Failed to load Movie Information');
+    throw Exception('Failed to load File Information');
   }
 }
