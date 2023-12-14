@@ -1,7 +1,7 @@
 import "dart:convert";
 import "package:http/http.dart" as http;
 
-import "MoiveInfo.dart";
+import "MovieInfo.dart";
 
 void main() async {
   final moveiInfo = MoiveInfo.fromJson(await getMovieInfo());
