@@ -12,7 +12,13 @@ dependencies:
   collection: ^1.18.0
   intl: ^0.19.0
   args: ^2.4.2
+  json_annotation: ^4.8.1 # Json code generator set
 
 dev_dependencies:
+  build_runner: ^2.4.7  # Json code generator set
+  json_serializable: ^6.7.1 # Json code generator set
   lints: ^2.1.0
   test: ^1.24.0
+
+
+# terminal for Json code generator : flutter pub add json_annotation dev:build_runner dev:json_serializable
