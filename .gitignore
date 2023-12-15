@@ -69,10 +69,13 @@ proguard/
 # Log, Image & Text Files
 *.log
 *.txt
+
+# custom
 *.csv
 *.ico
 *.jpg
 *.png
+CHANGELOG.md
 
 # Android Studio
 /*/build/

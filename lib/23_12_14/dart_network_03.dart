@@ -33,4 +33,7 @@ Future<Uint8List> downloadImage(String url) async {
   } else {
     throw Exception('Failed to load File Information');
   }
+
+  // 위 코드와 동일하지만 response.statusCode 를 못받음
+  // return http.readBytes(Uri.parse(url));
 }
