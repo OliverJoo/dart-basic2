@@ -5,7 +5,7 @@ import "MovieInfo.dart";
 
 void main() async {
   final moveiInfo = MoiveInfo.fromJson(await getMovieInfo());
-  print(moveiInfo.toJson());
+  print(moveiInfo.results.toString());
 }
 
 Future<Map<String, dynamic>> getMovieInfo() async {
