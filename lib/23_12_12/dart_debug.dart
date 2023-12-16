@@ -81,7 +81,10 @@ class CollectionChartData {
     final chartData = map['collectionChartDataList'] as List<dynamic>;
     return CollectionChartData(
       chartData: chartData != null
-          ? chartData.map((chartData) => ChartData.fromMap(chartData as Map<String, dynamic>)).toList()
+          ? chartData
+              .map((chartData) =>
+                  ChartData.fromMap(chartData as Map<String, dynamic>))
+              .toList()
           : <ChartData>[],
     );
   }
