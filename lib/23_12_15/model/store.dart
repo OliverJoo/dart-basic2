@@ -10,7 +10,6 @@ class Store {
   String stock;
   int type;
 
-
   Store({
     required this.address,
     required this.name,
