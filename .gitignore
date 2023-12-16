@@ -76,6 +76,7 @@ proguard/
 *.jpg
 *.png
 CHANGELOG.md
+Dart_Packages.xml
 
 # Android Studio
 /*/build/
