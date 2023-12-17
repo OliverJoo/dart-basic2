@@ -26,7 +26,7 @@ List<int> inputParameters() {
   List<int>? intList = [];
 
   String? oneLine = stdin.readLineSync();
-  List<String> strList = oneLine!.trim().split(' ').toList();
+  List<String> strList = oneLine!.trim().split(' ').toList(); // don't use !
 
   for (String str in strList) {
     intList.add(int.parse(str));
