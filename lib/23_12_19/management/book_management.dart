@@ -1,3 +1,4 @@
+import '../model/book_basic.dart';
 import 'management.dart';
 
 class BookManagementImpl implements Management {
@@ -11,12 +12,20 @@ class BookManagementImpl implements Management {
   static const String bookMsg = '0.뒤로\t1.도서조회\t2.도서등록\t3.도서수정';
   static const String bookCommandRange = '0 and 3!\n';
 
-
   BookManagementImpl._();
 
   static BookManagementImpl get instance {
     _instance ??= BookManagementImpl._();
     return _instance!;
+  }
+
+  @override
+  Data searchInfo(int id) {
+    return BookInfo(
+        title: 'title',
+        author: 'author',
+        status: 'status',
+        publishedDate: '2013-12-12');
   }
 
   @override
@@ -38,7 +47,7 @@ class BookManagementImpl implements Management {
   }
 
   @override
-  bool modifyInfo(Data data) {
+  bool modifyInfo(Data data, int id) {
     print('BookManagementImpl modifyInfo');
     return false;
   }
