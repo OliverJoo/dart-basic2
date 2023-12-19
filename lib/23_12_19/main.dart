@@ -66,7 +66,9 @@ bool bookCheckoutProcess(LibraryManagementImpl libraryMgmt, bool flag) {
 
     if (command == LibraryManagementImpl.backFromBookCheckout) {
       flag = stopProgram;
-    } else if (0 < command && command < 4) {
+    } else if (command == LibraryManagementImpl.borrowingBook ||
+        command == LibraryManagementImpl.returningBook ||
+        command == LibraryManagementImpl.extendingBorrowingTerm) {
       flag = continueProgram;
       switch (command) {
         case LibraryManagementImpl.borrowingBook:
@@ -96,7 +98,11 @@ bool memberMgmtProcess(MemberManagementImpl memberMgmt, bool flag) {
 
     if (command == MemberManagementImpl.backFromMember) {
       flag = stopProgram;
-    } else if (0 < command && command < 6) {
+    } else if (command == MemberManagementImpl.searchMember ||
+        command == MemberManagementImpl.registerMember ||
+        command == MemberManagementImpl.modifyMemberInfo ||
+        command == MemberManagementImpl.deleteMember ||
+        command == MemberManagementImpl.cancelDeleteMember) {
       flag = continueProgram;
       switch (command) {
         case MemberManagementImpl.searchMember:
@@ -132,7 +138,9 @@ bool bookMgmtProcess(BookManagementImpl bookMgmt, bool flag) {
 
     if (command == BookManagementImpl.backFromBook) {
       flag = stopProgram;
-    } else if (0 < command && command < 4) {
+    } else if (command == BookManagementImpl.searchBook ||
+        command == BookManagementImpl.registerBook ||
+        command == BookManagementImpl.modifyBookInfo) {
       flag = continueProgram;
       switch (command) {
         case BookManagementImpl.searchBook:
