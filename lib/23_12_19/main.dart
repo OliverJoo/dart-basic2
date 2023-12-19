@@ -100,7 +100,7 @@ bool memberMgmtProcess(MemberManagementImpl memberMgmt, bool flag) {
       flag = continueProgram;
       switch (command) {
         case MemberManagementImpl.searchMember:
-          memberMgmt.searchInfo(0);
+          print(memberMgmt.searchInfo(0));
           break;
         case MemberManagementImpl.registerMember:
           memberMgmt.addInfo(memberInfo);
@@ -136,7 +136,7 @@ bool bookMgmtProcess(BookManagementImpl bookMgmt, bool flag) {
       flag = continueProgram;
       switch (command) {
         case BookManagementImpl.searchBook:
-          bookMgmt.searchInfo(0);
+          print(bookMgmt.searchInfo(0));
           break;
         case BookManagementImpl.registerBook:
           bookMgmt.addInfo(bookInfo);

@@ -27,10 +27,10 @@ class MemberManagementImpl implements Management {
     print('MemberManagementImpl searchInfo');
     // for test
     return MemberInfo(
-        name: 'name',
-        address: 'address',
-        gender: 'gender',
-        phone: 'phone',
+        name: 'James',
+        address: '811 Fedora St.',
+        gender: 'male',
+        phone: '949-949-949',
         birthday: DateTime.parse('2000-10-10'));
   }
 

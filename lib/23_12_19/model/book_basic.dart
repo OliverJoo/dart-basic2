@@ -32,6 +32,11 @@ class BookInfo extends BookBasic implements Data {
   String getInfo() {
     return 'BookBasic{author: $author, status: $status} Book{id: $id, publishedDate: $publishedDate}';
   }
+
+  @override
+  String toString() {
+    return getInfo();
+  }
 }
 
 class BookBorrowHistory extends BookBasic {
@@ -53,6 +58,11 @@ class BookBorrowHistory extends BookBasic {
   String getInfo() {
     return 'BookBasic{author: $author, status: $status}  '
         'BookBorrowHistory{id: $id, borrowDate: ${DateFormat('yyyy-MM-dd').format(borrowDate)}, returnDate: $returnDate, id: $id}';
+  }
+
+  @override
+  String toString() {
+    return getInfo();
   }
 }
 

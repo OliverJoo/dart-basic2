@@ -22,9 +22,9 @@ class BookManagementImpl implements Management {
   @override
   Data searchInfo(int id) {
     return BookInfo(
-        title: 'title',
-        author: 'author',
-        status: 'status',
+        title: 'Design Pattern',
+        author: 'Head First',
+        status: 'Available',
         publishedDate: '2013-12-12');
   }
 
