@@ -9,6 +9,8 @@ class BookManagementImpl implements Management {
   static const int modifyBookInfo = 3;
 
   static const String bookMsg = '0.뒤로\t1.도서조회\t2.도서등록\t3.도서수정';
+  static const String bookCommandRange = '0 and 3!\n';
+
 
   BookManagementImpl._();
 

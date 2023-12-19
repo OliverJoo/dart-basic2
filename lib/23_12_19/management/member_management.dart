@@ -11,6 +11,7 @@ class MemberManagementImpl implements Management {
   static const int cancelDeleteMember = 5;
 
   static const String memberMsg = '0.뒤로\t1.회원조회\t2.회원등록\t3.회원수정\t4.회원삭제\t5.삭제취소';
+  static const memberCommandRange = '0 and 5!\n';
 
 
   MemberManagementImpl._();

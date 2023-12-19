@@ -21,6 +21,7 @@ class LibraryManagementImpl implements LibraryManagement {
       '도서 관리 프로그램을 시작합니다. 원하시는 항목의 숫자를 입력하시고 엔터를 입력해주세요~';
   static const String finalMsg = '도서 관리 프로그램을 종료합니다.';
   static const String libMgmtMsg = '1.회원관리\t2.도서관리\t3.종료';
+  static const String libraryCommandRange = '1 and 3!\n';
 
   static LibraryManagementImpl? _instance;
 

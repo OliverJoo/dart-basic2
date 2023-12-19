@@ -10,15 +10,24 @@ import 'model/book_basic.dart';
 final bool continueProgram = true;
 final bool stopProgram = false;
 final String wrongInputMsg = 'Please, input the proper number between ';
-final String libraryCommandRange = '1 and 3!\n';
-final String memberCommandRange = '0 and 5!\n';
-final String bookCommandRange = '0 and 3!\n';
 
 void main() {
   var libraryMgmt = LibraryManagementImpl.instance;
   var memberMgmt = MemberManagementImpl.instance;
   var bookMgmt = BookManagementImpl.instance;
   bool flag = continueProgram;
+
+  final memberInfo = MemberInfo(
+      name: 'name',
+      address: 'addr',
+      gender: 'Male',
+      phone: '010-1111-2222',
+      birthday: DateTime.parse('2000-10-01'));
+  final bookInfo = BookInfo(
+      title: 'title',
+      author: 'author',
+      status: 'status',
+      publishedDate: '2013-12-12');
 
   print(LibraryManagementImpl.initMsg);
 
@@ -40,7 +49,7 @@ void main() {
       print(LibraryManagementImpl.finalMsg);
       return;
     } else {
-      print(wrongInputMsg + libraryCommandRange);
+      print(wrongInputMsg + LibraryManagementImpl.libraryCommandRange);
     }
   } while (flag);
 }
@@ -73,7 +82,7 @@ bool memberMgmtProcess(MemberManagementImpl memberMgmt, bool flag) {
           break;
       }
     } else {
-      print(wrongInputMsg + memberCommandRange);
+      print(wrongInputMsg + MemberManagementImpl.memberCommandRange);
       print('$command');
     }
   } while (flag);
@@ -104,7 +113,7 @@ bool bookMgmtProcess(BookManagementImpl bookMgmt, bool flag) {
           break;
       }
     } else {
-      print(wrongInputMsg + bookCommandRange);
+      print(wrongInputMsg + BookManagementImpl.bookCommandRange);
       print('$command');
     }
   } while (flag);
