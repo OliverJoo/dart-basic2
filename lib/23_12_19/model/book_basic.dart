@@ -56,31 +56,31 @@ class BookBorrowHistory extends BookBasic {
   }
 }
 
-void main() {
-  List<BookInfo> bookList = [];
-  bookList.add(BookInfo(
-      title: 'title',
-      author: 'author',
-      status: 'status',
-      publishedDate: '2013-12-12'));
-  bookList.add(BookInfo(
-      title: 'title1',
-      author: 'author2',
-      status: 'status2',
-      publishedDate: '2015-12-12'));
-  bookList.add(BookInfo(
-      title: 'title14',
-      author: 'auth3or2',
-      status: 's2tatus2',
-      publishedDate: '2015-12-01'));
-  for (BookInfo book in bookList) {
-    print(book.getInfo());
-  }
-
-  final bookHistory = BookBorrowHistory(
-      title: 'title',
-      author: 'author',
-      status: 'status',
-      borrowDate: '2013-12-15');
-  print(bookHistory.getInfo());
-}
+// void main() {
+//   List<BookInfo> bookList = [];
+//   bookList.add(BookInfo(
+//       title: 'title',
+//       author: 'author',
+//       status: 'status',
+//       publishedDate: '2013-12-12'));
+//   bookList.add(BookInfo(
+//       title: 'title1',
+//       author: 'author2',
+//       status: 'status2',
+//       publishedDate: '2015-12-12'));
+//   bookList.add(BookInfo(
+//       title: 'title14',
+//       author: 'auth3or2',
+//       status: 's2tatus2',
+//       publishedDate: '2015-12-01'));
+//   for (BookInfo book in bookList) {
+//     print(book.getInfo());
+//   }
+//
+//   final bookHistory = BookBorrowHistory(
+//       title: 'title',
+//       author: 'author',
+//       status: 'status',
+//       borrowDate: '2013-12-15');
+//   print(bookHistory.getInfo());
+// }

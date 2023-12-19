@@ -32,13 +32,13 @@ class MemberInfo implements Data {
   }
 }
 
-void main() {
-  final memberInfo = MemberInfo(
-      name: 'name',
-      address: 'addr',
-      gender: 'Male',
-      phone: '010-1111-2222',
-      birthday: DateTime.parse('2000-10-01'));
-
-  print(memberInfo.toString());
-}
+// void main() {
+//   final memberInfo = MemberInfo(
+//       name: 'name',
+//       address: 'addr',
+//       gender: 'Male',
+//       phone: '010-1111-2222',
+//       birthday: DateTime.parse('2000-10-01'));
+//
+//   print(memberInfo.toString());
+// }
