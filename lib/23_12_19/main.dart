@@ -20,18 +20,6 @@ void main() {
   var bookMgmt = BookManagementImpl.instance;
   bool flag = continueProgram;
 
-  final memberInfo = MemberInfo(
-      name: 'name',
-      address: 'addr',
-      gender: 'Male',
-      phone: '010-1111-2222',
-      birthday: DateTime.parse('2000-10-01'));
-  final bookInfo = BookInfo(
-      title: 'title',
-      author: 'author',
-      status: 'status',
-      publishedDate: '2013-12-12');
-
   print(LibraryManagementImpl.initMsg);
 
   do {
