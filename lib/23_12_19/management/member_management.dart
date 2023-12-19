@@ -3,7 +3,7 @@ import 'management.dart';
 class MemberManagementImpl implements Management {
   static MemberManagementImpl? _instance;
 
-  static const int backwardFromMember = 0;
+  static const int backFromMember = 0;
   static const int searchMember = 1;
   static const int registerMember = 2;
   static const int modifyMemberInfo = 3;
@@ -23,21 +23,25 @@ class MemberManagementImpl implements Management {
 
   @override
   bool addInfo(Data data) {
+    print('MemberManagementImpl addInfo');
     return false;
   }
 
   @override
   bool delDataInfo(int id) {
+    print('MemberManagementImpl delDataInfo');
     return false;
   }
 
   @override
   List<Data> getAllDataListInfo() {
+    print('MemberManagementImpl getAllDataListInfo');
     return [];
   }
 
   @override
   bool modifyInfo(Data data) {
+    print('MemberManagementImpl modifyInfo');
     return false;
   }
 }

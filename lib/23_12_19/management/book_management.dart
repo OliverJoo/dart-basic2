@@ -3,7 +3,7 @@ import 'management.dart';
 class BookManagementImpl implements Management {
   static BookManagementImpl? _instance;
 
-  static const int backwardFromBook = 0;
+  static const int backFromBook = 0;
   static const int searchBook = 1;
   static const int registerBook = 2;
   static const int modifyBookInfo = 3;
@@ -21,21 +21,25 @@ class BookManagementImpl implements Management {
 
   @override
   bool addInfo(Data data) {
+    print('BookManagementImpl addInfo');
     return false;
   }
 
   @override
   bool delDataInfo(int id) {
+    print('BookManagementImpl delDataInfo');
     return false;
   }
 
   @override
   List<Data> getAllDataListInfo() {
+    print('BookManagementImpl getAllDataListInfo');
     return [];
   }
 
   @override
   bool modifyInfo(Data data) {
+    print('BookManagementImpl modifyInfo');
     return false;
   }
 }

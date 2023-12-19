@@ -35,7 +35,8 @@ void main() {
     print(LibraryManagementImpl.libMgmtMsg);
     int command = inputParameter();
     if (command == LibraryManagementImpl.managingMemberInfo ||
-        command == LibraryManagementImpl.managingBookInfo) {
+        command == LibraryManagementImpl.managingBookInfo ||
+        command == LibraryManagementImpl.managingBookCheckout) {
       flag = stopProgram;
       switch (command) {
         case LibraryManagementImpl.managingMemberInfo:
@@ -43,6 +44,9 @@ void main() {
           break;
         case LibraryManagementImpl.managingBookInfo:
           flag = bookMgmtProcess(bookMgmt, continueProgram);
+          break;
+        case LibraryManagementImpl.managingBookCheckout:
+          flag = bookCheckoutProcess(libraryMgmt, continueProgram);
           break;
       }
     } else if (command == LibraryManagementImpl.quitLibraryProgram) {
@@ -54,13 +58,45 @@ void main() {
   } while (flag);
 }
 
+bool bookCheckoutProcess(LibraryManagementImpl libraryMgmt, bool flag) {
+  do {
+    print(LibraryManagementImpl.bookCheckoutMsg);
+    int command = inputParameter();
+
+    if (command == LibraryManagementImpl.backFromBookCheckout) {
+      flag = stopProgram;
+    } else if (0 < command && command <= 4) {
+      flag = continueProgram;
+      switch (command) {
+        case LibraryManagementImpl.backFromBookCheckout:
+          print('$command LibraryManagementImpl.backFromBookCheckout');
+          break;
+        case LibraryManagementImpl.borrowingBook:
+          print('$command LibraryManagementImpl.borrowingBook');
+          break;
+        case LibraryManagementImpl.returningBook:
+          print('$command LibraryManagementImpl.returningBook');
+          break;
+        case LibraryManagementImpl.extendingBorrowingTerm:
+          print('$command LibraryManagementImpl.extendingBorrowingTerm');
+          break;
+      }
+    } else {
+      print(wrongInputMsg + MemberManagementImpl.memberCommandRange);
+      print('$command');
+    }
+  } while (flag);
+
+  return continueProgram;
+}
+
 // Member management process
 bool memberMgmtProcess(MemberManagementImpl memberMgmt, bool flag) {
   do {
     print(MemberManagementImpl.memberMsg);
     int command = inputParameter();
 
-    if (command == MemberManagementImpl.backwardFromMember) {
+    if (command == MemberManagementImpl.backFromMember) {
       flag = stopProgram;
     } else if (0 < command && command <= 5) {
       flag = continueProgram;
@@ -97,7 +133,7 @@ bool bookMgmtProcess(BookManagementImpl bookMgmt, bool flag) {
     print(BookManagementImpl.bookMsg);
     int command = inputParameter();
 
-    if (command == BookManagementImpl.backwardFromBook) {
+    if (command == BookManagementImpl.backFromBook) {
       flag = stopProgram;
     } else if (0 < command && command <= 5) {
       flag = continueProgram;
